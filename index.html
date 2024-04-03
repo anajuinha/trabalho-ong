@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>HTML 5 Boilerplate</title>
+	<link rel="stylesheet" href="style.css">
+  </head>
+<style>
+	@import url("https://fonts.googleapis.com/css2?family=Overlock+SC&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+body,
+html {
+  width: fit-content;
+  margin: 0;
+    position: relative;
+    z-index: 0;
+overflow-x:hidden;
+width:100%;
+}
+
+* {
+  color: #4b3832;
+  font-family: "Overlock SC", sans-serif;
+}
+#sidemenu {
+  display: flex;
+  right: 0;
+  position: fixed;
+  top: 0;
+  flex-direction: column;
+  height: 100%;
+  top: 130px;
+  background: #854442;
+  width: 0;
+  transition: 0.5s;
+  text-wrap: nowrap;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+a{
+  text-decoration: none;
+font-size: 22px;
+display: flex;
+    align-items: center;
+    width: 300px;
+color: #fff4e6;
+transition: .5s;
+}
+
+#sidemenu a{
+padding: 10px 20px;
+}
+
+
+a:hover{
+  letter-spacing: 1px;
+  transition: .5s;
+}
+
+header {
+  background: #4b3832;
+  height: 100px;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  width: 100%;
+z-index:1;
+padding: 15px;
+}
+
+.logo {
+  filter: invert(1);
+  width: 38%;
+  transform: rotateY(180deg);
+  position: relative;
+}
+
+#teste1 {
+  display: flex;
+  right: 20px;
+  position: fixed;
+  font-size: 30px;
+color: #fff4e6;
+}
+
+input {
+  visibility: hidden;
+}
+
+header input:checked ~ #sidemenu {
+  width: 200px;
+  transition: 0.5s ease;
+}
+
+#teste1:after {
+  content: "⨉";
+    transform: scale(0);
+    transition: .5s;
+    right: 22px;
+    position: fixed;
+    top: 46px;
+}
+
+#teste1:before {
+	transform: scale(1);
+transition: .5s;
+}
+
+header input:checked ~ #teste1:after{
+	transform: scale(1);
+transition-delay: 250ms;
+transition: .5s;
+}
+
+header input:checked ~ #teste1:before {
+     transform: scale(0);
+    transition: .5s;
+}
+
+.oque {
+  background:  #f9dcc3;
+  margin-top: -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 15px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+   position: relative;
+}
+
+.card-info {
+  display: flex;
+position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+padding-bottom: 100px;
+justify-content: center;
+}
+
+.card-info2 {
+  display: flex;
+position: relative;
+padding-bottom: 100px;
+justify-content: center;
+}
+
+
+p {
+  margin: 10px;
+}
+
+h1{
+	text-shadow: 3px 0 #4b3832, -2px 0 #4b3832, 0 3px #4b3832, 0 -2px #4b3832, 2px 2px #4b3832, -1px -1px #4b3832, 1px -1px #4b3832, -1px 1px #4b3832;
+    font-size: 30px;
+    z-index: 10;
+	color: #fff4e6;
+}
+
+h2 {
+  margin: 0px 0px 20px;
+  scroll-margin-top: 145px;
+  text-align: center;
+font-size: 40px;
+}
+
+video{
+	filter: brightness(0.3);
+	height: 100vh;
+    object-fit: cover;
+}
+
+#home{
+	scroll-margin-top: 145px;
+padding: 0;
+}
+
+#frase{
+position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+   font-size: 25px;
+color: #fff4e6;
+text-align: center;
+}
+
+form{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+align-items: stretch;
+    gap: 10px;
+    font-size: 20px;
+}
+
+form input{
+visibility: visible;
+    padding: 15px;
+    background: transparent;
+    border: solid 2px;
+    transition: .5s;
+    outline: none;
+    font-size: 18px;
+}
+
+.centre{
+    display:flex;
+    gap: 20px;
+    justify-content: center;
+	align-items: center;
+padding-bottom:40px;
+}
+
+.outros{
+font-size: 20px;
+    justify-content: center;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+::placeholder { color:#4b3832; }
+
+i{
+font-size: 50px;
+cursor: pointer;
+transition: .5s;
+}
+
+i:hover{
+color: #fff4e6;
+transition: .5s;
+}
+
+form input[type="submit"]:hover{
+	background: white;
+	color: #4b3832;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #4b3832;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+textarea:focus, textarea:hover, form input:focus, form input:hover{
+	border-radius:8px;
+	transition: .5s;
+}
+
+.paragrafo{
+	width: 35%;
+}
+
+.img-text{
+	width: 350px;
+	height: 350px;
+}
+
+.imgorder{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	width: 25%;
+margin-top: 15px;
+}
+
+.cicle{
+	width: 200px;
+	border-radius: 50%;
+}
+
+.center-con {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    z-index: 1;
+    transform: rotate(90deg);
+}
+	
+@media (max-width: 500px){
+  .card-info{
+	flex-direction: column;
+	align-items: center;
+  }
+ .card-info2{
+	flex-direction: column;
+	align-items: center;
+  }
+
+  .center-con {bottom: 100px;}
+
+  form{
+	width:90%;
+  }
+  .paragrafo{
+	width: auto;
+}
+.img-text{
+	width: 100%;
+	height: 100%;
+}
+.centre{
+flex-direction: column;
+}
+
+.imgorder{
+	width: 90%;
+}
+}
+
+a:focus ~ #sidemenu{
+width: 0;
+}
+
+.round {
+    position: absolute;
+    border: 2px solid #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    
+}
+
+#cta{
+    width:100%; cursor: pointer; position: absolute;
+}
+
+#cta .arrow{left: 30%;}
+.arrow {position: absolute; bottom: 0;  margin-left:0px; width: 12px; height: 12px; background-size: contain; top:15px;}
+.segunda{margin-left: 8px;}
+.next {
+	background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHN0eWxlPi5zdDB7ZmlsbDojZmZmfTwvc3R5bGU+PHBhdGggY2xhc3M9InN0MCIgZD0iTTMxOS4xIDIxN2MyMC4yIDIwLjIgMTkuOSA1My4yLS42IDczLjdzLTUzLjUgMjAuOC03My43LjZsLTE5MC0xOTBjLTIwLjEtMjAuMi0xOS44LTUzLjIuNy03My43UzEwOSA2LjggMTI5LjEgMjdsMTkwIDE5MHoiLz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzE5LjEgMjkwLjVjMjAuMi0yMC4yIDE5LjktNTMuMi0uNi03My43cy01My41LTIwLjgtNzMuNy0uNmwtMTkwIDE5MGMtMjAuMiAyMC4yLTE5LjkgNTMuMi42IDczLjdzNTMuNSAyMC44IDczLjcuNmwxOTAtMTkweiIvPjwvc3ZnPg==);
+}
+
+@keyframes bounceAlpha {
+  0% {opacity: 1; transform: translateX(0px) scale(1);}
+  25%{opacity: 0; transform:translateX(10px) scale(0.9);}
+  26%{opacity: 0; transform:translateX(-10px) scale(0.9);}
+  55% {opacity: 1; transform: translateX(0px) scale(1);}
+}
+
+.bounceAlpha {
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+.arrow.primera.bounceAlpha {
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-delay:0.2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+.round:hover .arrow{
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+.round:hover .arrow.primera{
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-delay:0.2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+object{
+	width: 100%;
+	height: 100svh;
+	position: relative;
+	top: 130px;
+}
+</style>
+<body>
+
+
+<header><div><a href="#home" onclick="loadhome2()"><img class="logo" src="https://i.pinimg.com/originals/f1/53/36/f1533641db0d0adf4b940a9ab33f4f48.png"></img>
+	<h1>Fundação<br>Juan<br>Barbosa</h1></a></div>
+  <input type="checkbox" id="teste"></input>
+  <label class="bi bi-list" for="teste" id="teste1">
+  </label>
+
+<div title="side" id="sidemenu">
+  <a onclick="teste()" href="#titulo1">Quem somos?</a>
+  <a onclick="teste()" href="#titulo2">O que fazemos?</a>
+  <a onclick="teste()" href="#titulo3">Contato</a>
+</div>
+  </header>
+<main id="prince">
+  <section id="home" style="height: 100vh;
+    position: relative;
+    z-index: 0;"><div>
+<span id="frase">Na natureza está a preservação do mundo.</span>
+<div class="center-con">
+    <div class="round">
+        <a href="#titulo1"><div id="cta">
+            <span class="arrow primera next "></span>
+            <span class="arrow segunda next "></span>
+        </div></a>
+    </div>
+</div><video width="100%" autoplay="" loop="" muted=""><source src="video/video.mp4" type="video/mp4"></video></div></section>
+<section class="oque" style="padding-top:50px;">
+<div class="centrilize" style="margin: 10px;
+">
+  <h2  id="titulo1">Quem somos?</h2>
+  <div class="card-info"><img class="img-text" src="video/juan.jpg">    <p class="paragrafo">A FJB - Fundação Juan Barbosa é uma entidade legalmente constituída, sem fins lucrativos e declarada de Utilidade Pública Municipal pela Lei nº 6.789/03, tornando-se a primeira fundação de proteção animal do Brasil que trabalha em quatro áreas distintas: saúde, educação, jurídico e social.
+Todas as ações da FJB colaboram e impactam diretamente na qualidade da saúde pública do município, sendo nosso principal objetivo o controle populacional de cães e gatos através da cirurgia de castração. Este é o procedimento que a fundação considera ser o meio mais eficaz para diminuir ou eliminar os problemas causados pela superpopulação, como o abandono, disseminação de doenças, atropelamentos, nascimento de crias indesejadas, entre outros.
+Nosso propósito também é oferecer serviços de qualidade a preços acessíveis para a população menos favorecida economicamente, disponibilizando atendimento veterinário à caninos e felinos. Além disso, realizamos palestras educacionais sobre a guarda responsável de animais domésticos, organizamos eventos mensais de adoção (filhotes e adultos) – sendo todos os adultos (acima de 6 meses) já castrados, vermifugados com avaliação médica gratuita no centro de atendimento veterinário da FJB –, e ainda auxiliamos nas denúncias e resgates de animais em situação de risco, vulnerabilidade, maus tratos e crueldade.</p></img>
+
+  </div>
+</div>
+<div class="centrilize" style="    margin: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+margin: 20px;">
+  <h2 id="titulo2">O que fazemos?</h2>
+  <p class="paragrafo">habilitado a oferecer ampla variedade de serviços destinados a caninos e felinos domésticos. Confira abaixo:</p>
+  <div class="card-info2">
+ 	<div class="imgorder"><img class="cicle" src="video/neoenog.jpg"></img>
+		<h3>APOIO</h3><p>Apoio geral a animais em risco.</p></div>
+        <div class="imgorder"><img class="cicle" src="video/nogeneo2.jpeg"></img>
+<h3>CONSULTAS</h3><p>Procedimentos gerais de consulta.</p></div>
+        <div class="imgorder" onclick="loadhome()"><img class="cicle" src="video/nog.jpeg"></img><h3>PALESTRAS EDUCACIONAIS</h3><p>Escolas e entidades: conscientização sobre a guarda responsável de animais domésticos.</p></div></div></div>
+  </div>
+</div>
+</section>
+<section class="oque">
+<h2 id="titulo3">Contato</h2>
+<div class="centre">
+<form action="https://formsubmit.co/your@email.com" method="POST"">
+<label>Seu nome:</label>
+<input type="text" placeholder="Nome"></input>
+<label>Seu E-mail:</label>
+<input type="email" placeholder="E-mail"></input>
+<label>Informe o assunto:</label>
+<input type="text" placeholder="Assunto"></input>
+<label>Digite sua menssagem:</label>
+<textarea style="padding: 15px;
+    background: transparent;
+    border: solid 2px;
+    transition: .5s;
+    outline: none;
+    font-size: 18px; resize: none;" placeholder="Texto"></textarea>
+<input type="submit"></input>
+</form>
+
+<div class="outros">
+<h3 style="margin: 0;">Outros</h3>
+<label>Nosso e-mail: <span>blabla@gmail.com</span></label>
+<div style="margin-top: 10px; display:flex; gap: 15px;">
+<i class="bi bi-instagram"></i>
+<i class="bi bi-twitter"></i>
+</div>
+</section>
+</div>
+  </main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+	function teste(){
+		document.getElementById("teste").checked = false;
+		console.log("teste");
+}
+</script>
+</body>
+</html>
